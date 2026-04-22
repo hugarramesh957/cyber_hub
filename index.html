@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberSafe Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">CYBER<span>SAFE</span> HUB</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#breach">Breach</a></li>
+      <li><a href="#alerts">Alerts</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home">
+    <div class="hero-content">
+      <div class="hero-tag">// CYBERSECURITY AWARENESS //</div>
+      <h1 class="hero-title">
+        STAY SAFE.<br/>
+        <span class="cyan">STAY SMART.</span><br/>
+        <span class="green">STAY SECURE.</span>
+      </h1>
+      <p class="hero-sub">Learn how to protect yourself online with interactive tools, quizzes, and real-time threat simulations.</p>
+      <div class="hero-btns">
+        <a href="#tools" class="btn btn-primary">Explore Tools</a>
+        <a href="#quiz" class="btn btn-outline">Take Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS SECTION -->
+  <section id="tools">
+    <div class="container">
+      <p class="section-label">// TOOL_01</p>
+      <h2 class="section-title">Password <span>Strength Checker</span></h2>
+      <div class="card">
+        <div class="pw-wrap">
+          <input type="password" id="pwInput" placeholder="Enter your password..." />
+          <button class="toggle-pw" onclick="togglePw()">👁</button>
+        </div>
+        <div class="strength-bar-track">
+          <div class="strength-bar-fill" id="strengthBar"></div>
+        </div>
+        <div class="strength-info">
+          <span class="strength-label" id="strengthLabel">Enter a password</span>
+          <span class="crack-time" id="crackTime"></span>
+        </div>
+        <div class="pw-criteria">
+          <div class="criterion" id="c-length"><div class="criterion-dot"></div> 8+ Characters</div>
+          <div class="criterion" id="c-upper"><div class="criterion-dot"></div> Uppercase Letter</div>
+          <div class="criterion" id="c-lower"><div class="criterion-dot"></div> Lowercase Letter</div>
+          <div class="criterion" id="c-number"><div class="criterion-dot"></div> Number</div>
+          <div class="criterion" id="c-symbol"><div class="criterion-dot"></div> Symbol (!@#$...)</div>
+          <div class="criterion" id="c-long"><div class="criterion-dot"></div> 12+ Characters</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ SECTION -->
+  <section id="quiz">
+    <div class="container">
+      <p class="section-label">// TOOL_02</p>
+      <h2 class="section-title">Fake vs Real <span>Website Quiz</span></h2>
+      <div class="card" id="quizContainer">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="quizProgress"></div>
+        </div>
+        <p class="quiz-counter" id="quizCounter">Question 1 / 5</p>
+        <div id="quizBody">
+          <p class="quiz-question" id="quizQuestion"></p>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+        <div class="quiz-nav">
+          <span id="quizScoreTrack">Score: 0</span>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" style="display:none;">Next →</button>
+        </div>
+        <div class="quiz-score-board" id="quizResult">
+          <p style="color:var(--cyan);font-size:0.8rem;letter-spacing:3px;margin-bottom:12px;">FINAL SCORE</p>
+          <span class="final-score" id="finalScore">0/5</span>
+          <p id="scoreMsg" style="margin:20px 0;font-size:0.9rem;"></p>
+          <button class="btn btn-primary" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA BREACH SECTION -->
+  <section id="breach">
+    <div class="container">
+      <p class="section-label">// TOOL_03</p>
+      <h2 class="section-title">Data Breach <span>Checker</span></h2>
+      <div class="card">
+        <div class="pw-wrap">
+          <input type="email" id="emailInput" placeholder="Enter your email address..." />
+        </div>
+        <button class="btn btn-primary" onclick="checkBreach()" id="breachBtn">Check Breach</button>
+        <div id="breachResult" style="margin-top:28px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALERTS SECTION -->
+  <section id="alerts">
+    <div class="container">
+      <p class="section-label">// TOOL_04</p>
+      <h2 class="section-title">Live Threat <span>Alerts</span></h2>
+      <div class="card">
+        <div style="display:flex;gap:14px;margin-bottom:28px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="generateAlert()">Generate Alert</button>
+          <button class="btn btn-outline" onclick="clearAlerts()">Clear All</button>
+        </div>
+        <div id="alertPanel"></div>
+        <p id="noAlertsMsg" style="color:rgba(200,216,240,0.3);font-size:0.8rem;">No active threats detected. Click "Generate Alert" to simulate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALERT TOAST CONTAINER -->
+  <div id="toastContainer"></div>
+
+  <footer>
+    <p>⚡ CyberSafe Hub &nbsp;|&nbsp; Built for Cybersecurity Awareness &nbsp;|&nbsp; Stay Safe Online</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
